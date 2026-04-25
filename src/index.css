@@ -4,89 +4,42 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    --background: 240 10% 4%;
+    --foreground: 0 0% 95%;
+    --card: 240 8% 7%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 8% 7%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 150 100% 50%;
+    --primary-foreground: 240 10% 4%;
+    --secondary: 240 6% 12%;
+    --secondary-foreground: 0 0% 80%;
+    --muted: 240 6% 12%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 330 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 6% 14%;
+    --input: 240 6% 14%;
+    --ring: 150 100% 50%;
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    --neon-green: #00ff88;
+    --neon-pink: #ff0066;
+    --neon-blue: #00d4ff;
+    --bg-dark: #0a0a0f;
+    --bg-card: #10101a;
+    --bg-card-hover: #141420;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 240 10% 4%;
+    --sidebar-foreground: 0 0% 80%;
+    --sidebar-primary: 150 100% 50%;
+    --sidebar-primary-foreground: 240 10% 4%;
+    --sidebar-accent: 240 6% 12%;
+    --sidebar-accent-foreground: 0 0% 80%;
+    --sidebar-border: 240 6% 14%;
+    --sidebar-ring: 150 100% 50%;
   }
 }
 
@@ -96,6 +49,215 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-rubik;
+    background-color: var(--bg-dark);
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a0f;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #00ff8840;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00ff88;
+  }
+}
+
+@layer components {
+  .neon-text {
+    color: var(--neon-green);
+    text-shadow:
+      0 0 10px #00ff8880,
+      0 0 20px #00ff8840;
+  }
+
+  .neon-pink-text {
+    color: var(--neon-pink);
+    text-shadow:
+      0 0 10px #ff006680,
+      0 0 20px #ff006640;
+  }
+
+  .neon-border {
+    border: 1px solid var(--neon-green);
+    box-shadow:
+      0 0 8px #00ff8840,
+      inset 0 0 8px #00ff8810;
+  }
+
+  .neon-border-pink {
+    border: 1px solid var(--neon-pink);
+    box-shadow:
+      0 0 8px #ff006640,
+      inset 0 0 8px #ff006610;
+  }
+
+  .neon-btn {
+    background: transparent;
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    text-shadow: 0 0 8px #00ff8880;
+    box-shadow: 0 0 12px #00ff8830;
+    transition: all 0.2s ease;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .neon-btn:hover {
+    background: #00ff8815;
+    box-shadow:
+      0 0 24px #00ff8860,
+      0 0 48px #00ff8820;
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ff88;
+  }
+
+  .neon-btn-filled {
+    background: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    color: #0a0a0f;
+    box-shadow: 0 0 20px #00ff8860;
+    transition: all 0.2s ease;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .neon-btn-filled:hover {
+    box-shadow:
+      0 0 36px #00ff88,
+      0 0 60px #00ff8840;
+    transform: translateY(-1px);
+  }
+
+  .neon-btn-pink {
+    background: var(--neon-pink);
+    border: 1px solid var(--neon-pink);
+    color: #ffffff;
+    box-shadow: 0 0 20px #ff006660;
+    transition: all 0.2s ease;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .neon-btn-pink:hover {
+    box-shadow:
+      0 0 36px #ff0066,
+      0 0 60px #ff006640;
+    transform: translateY(-1px);
+  }
+
+  .mod-card {
+    background: var(--bg-card);
+    border: 1px solid #ffffff08;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mod-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #00ff8840, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .mod-card:hover {
+    border-color: #00ff8830;
+    background: var(--bg-card-hover);
+    box-shadow:
+      0 8px 32px #00000060,
+      0 0 0 1px #00ff8815;
+    transform: translateY(-2px);
+  }
+
+  .mod-card:hover::before {
+    opacity: 1;
+  }
+
+  .glass {
+    background: rgba(16, 16, 26, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .tag-free {
+    background: #00ff8820;
+    color: var(--neon-green);
+    border: 1px solid #00ff8840;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .tag-paid {
+    background: #ff006620;
+    color: var(--neon-pink);
+    border: 1px solid #ff006640;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .nav-link {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: #ffffff70;
+    transition: color 0.2s ease;
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 4px;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--neon-green);
+    text-shadow: 0 0 8px #00ff8860;
+  }
+
+  .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--neon-green);
+    box-shadow: 0 0 6px #00ff88;
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(0, 255, 136, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 136, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 }
