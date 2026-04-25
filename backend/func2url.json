@@ -1,0 +1,6 @@
+{
+  "auth": "https://functions.poehali.dev/307eed25-8891-400b-8504-61269ef603cd",
+  "orders": "https://functions.poehali.dev/69b56b08-d523-44d0-b400-cd158e8a831a",
+  "verify-payment": "https://functions.poehali.dev/a402843e-b9ec-4a6e-9b0e-454b67e3d0d7",
+  "mods": "https://functions.poehali.dev/46981288-9ee5-442c-ac11-e889ff415eef"
+}

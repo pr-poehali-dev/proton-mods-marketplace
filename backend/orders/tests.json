@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "Create free order",
+      "method": "POST",
+      "path": "/",
+      "body": {"action": "create", "mod_id": 1, "payment_method": "free"},
+      "expectedStatus": 200,
+      "bodyMatcher": "none"
+    }
+  ]
+}

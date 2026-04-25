@@ -1,0 +1,11 @@
+{
+  "tests": [
+    {
+      "name": "Get all mods",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "bodyMatcher": "none"
+    }
+  ]
+}

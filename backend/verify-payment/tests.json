@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "Verify missing order",
+      "method": "POST",
+      "path": "/",
+      "body": {"order_id": 99999},
+      "expectedStatus": 404,
+      "bodyMatcher": "none"
+    }
+  ]
+}
